@@ -8,23 +8,67 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Lato', sans-serif
+    font-family: 'Lato', sans-serif;
+        
+        
 }
-
+html, body{
+    height: 100%;
+}
 body{
-    widows: 100vw;
-    height: 100vh;
     overflow: hidden;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(45deg, #2ecc71, #16a085)
+/*    background: linear-gradient(45deg, #2ecc71, #16a085);*/
+    
 }
 
-.clock{
+.header{
+    grid-area: header;
     position: relative;
-    width: 500px;
-    height: 500px;
+    top: 0px;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 25px;
+    height: 20%;
+}
+
+h1{
+    font-size: 24px;
+}
+
+#message , h1{
+    color: white;
+   
+    font-weight: bold;
+}
+.main{
+    position: relative;
+    grid-area: main;  
+    top: -100px;
+}
+
+
+
+.wrapper {
+    width: 100%;
+    height: inherit;
+    display: grid;
+
+    grid-template-areas:
+     "header"
+     "main";
+     
+}
+.clock{
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 300px;
+    height: 300px;
     overflow: hidden;
     border-radius: 250px;
     border: 10px solid #111;
@@ -48,7 +92,7 @@ body{
     top: 0;
     left: 0;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     padding: 18px;
 }
@@ -187,4 +231,52 @@ body{
     border-radius: 8px;
 }
 
+@media (min-width: 576px) { 
+    h1{
+    font-size: 42px;
+    }
+    #message{
+        font-size: 32px;f
+    }
+    
+    .main{
+    top: -150px;
+    }
+    
+    .clock{
+        width: 400px;
+        height: 400px;
+    }
+    
+    .num{
+    font-size: 2rem;
+    padding: 20px;
+    }
+}
 
+@media (min-width: 767px) {
+    
+    
+
+@media (min-width: 992px) {
+   .clock{
+        width: 500px;
+        height: 500px;
+    }
+    
+    .num{
+    font-size: 2.5rem;
+    padding: 22px;
+    }
+    
+    header{
+        margin-top: 50px;
+    }
+}
+
+@media (min-width: 1200px) {
+  
+    
+    
+    
+}
